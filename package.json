@@ -55,16 +55,15 @@
     "rollup-plugin-terser": "^6.1.0",
     "snowpack": "^2.5.4",
     "snowpack-plugin-import-map": "^1.0.0",
-    "three": "^0.116.1",
-    "troika-3d-text": "^0.17.0",
+    "three": "^0.166.0",
+    "troika-three-text": "^0.49.1",
     "typedoc": "^0.15.8",
     "typedoc-plugin-markdown": "^2.2.16",
     "typescript": "^3.9.5"
   },
   "peerDependencies": {
     "ecsy": "*",
-    "three": "*",
-    "troika-3d-text": "*"
+    "three": "*"
   },
   "repository": {
     "type": "git",
