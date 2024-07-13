@@ -13,7 +13,7 @@ export class SkyBoxSystem extends System {
       let skybox = entity.getComponent(SkyBox);
 
       let group = new THREE.Group();
-      let geometry = new THREE.BoxBufferGeometry(100, 100, 100);
+      let geometry = new THREE.BoxGeometry(100, 100, 100);
       geometry.scale(1, 1, -1);
 
       if (skybox.type === "cubemap-stereo") {

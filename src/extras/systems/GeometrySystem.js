@@ -67,7 +67,6 @@ export class GeometrySystem extends System {
 
       var material = new THREE.MeshLambertMaterial({
         color: color,
-        flatShading: true
       });
 
       var object = new THREE.Mesh(geometry, material);

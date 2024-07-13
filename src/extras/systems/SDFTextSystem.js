@@ -1,5 +1,5 @@
 import { System } from "ecsy";
-import { TextMesh } from "troika-3d-text/dist/textmesh-standalone.esm.js";
+import { Text as TextMesh } from "troika-three-text";
 import { Text } from "../components/index.js";
 import { Object3DComponent } from "../../core/Object3DComponent.js";
 
@@ -18,8 +18,8 @@ export class SDFTextSystem extends System {
   updateText(textMesh, textComponent) {
     textMesh.text = textComponent.text;
     textMesh.textAlign = textComponent.textAlign;
-    textMesh.anchor[0] = anchorMapping[textComponent.anchor];
-    textMesh.anchor[1] = baselineMapping[textComponent.baseline];
+    textMesh.anchorX = textComponent.anchor;
+    textMesh.anchorY = textComponent.baseline;
     textMesh.color = textComponent.color;
     textMesh.font = textComponent.font;
     textMesh.fontSize = textComponent.fontSize;
@@ -40,7 +40,8 @@ export class SDFTextSystem extends System {
 
       const textMesh = new TextMesh();
       textMesh.name = "textMesh";
-      textMesh.anchor = [0, 0];
+      textMesh.anchorX = 0;
+      textMesh.anchorY = 0;
       textMesh.renderOrder = 10; //brute-force fix for ugly antialiasing, see issue #67
       this.updateText(textMesh, textComponent);
       e.addComponent(Object3DComponent, { value: textMesh });
