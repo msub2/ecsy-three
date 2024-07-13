@@ -9,9 +9,9 @@ const anchorMapping = {
   right: 1
 };
 const baselineMapping = {
-  top: 0,
-  center: 0.5,
-  bottom: 1
+  top: 'top',
+  center: 'middle',
+  bottom: 'bottom'
 };
 
 export class SDFTextSystem extends System {
@@ -19,7 +19,7 @@ export class SDFTextSystem extends System {
     textMesh.text = textComponent.text;
     textMesh.textAlign = textComponent.textAlign;
     textMesh.anchorX = textComponent.anchor;
-    textMesh.anchorY = textComponent.baseline;
+    textMesh.anchorY = baselineMapping[textComponent.baseline];
     textMesh.color = textComponent.color;
     textMesh.font = textComponent.font;
     textMesh.fontSize = textComponent.fontSize;
